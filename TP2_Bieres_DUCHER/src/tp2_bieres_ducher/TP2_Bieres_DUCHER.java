@@ -18,5 +18,19 @@ public class TP2_Bieres_DUCHER {
       uneBiere.lireEtiquette();
       BouteilleBiere deuxbiere = new BouteilleBiere("Leffe",6.6 ,"Abbaye de Leffe");
       deuxbiere.lireEtiquette();
+      BouteilleBiere troisBiere = new BouteilleBiere("bourrade", 9.0 ,"Dussac");
+      troisBiere.lireEtiquette();
+      BouteilleBiere quatbiere = new BouteilleBiere("sclor",8.6 ,"Floir");
+      quatbiere.lireEtiquette();
+       BouteilleBiere cinqbiere = new BouteilleBiere("myro",6.0 ,"Visio");
+      cinqbiere.lireEtiquette();
+        uneBiere.Décapsuler();
+      System.out.println(uneBiere) ;
+      System.out.println(deuxbiere) ;
+      System.out.println(troisBiere) ;
+      System.out.println(quatbiere) ;
+      System.out.println(cinqbiere) ;
+    
+     
   }
 }
