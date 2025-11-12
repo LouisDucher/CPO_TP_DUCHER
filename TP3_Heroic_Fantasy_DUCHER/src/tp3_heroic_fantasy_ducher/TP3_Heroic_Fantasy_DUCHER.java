@@ -14,7 +14,8 @@ public class TP3_Heroic_Fantasy_DUCHER {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    Arme epee = new Arme("Epee en acier", 85);
+    System.out.println(epee);
     }
     
 }

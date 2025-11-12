@@ -8,6 +8,24 @@ package tp3_heroic_fantasy_ducher;
  *
  * @author louis
  */
-public class Arme {
+public abstract class Arme {
     
+    String nom;
+    int niveauDattaque;
+
+    public Arme(String nom, int niveauDattaque) {
+        this.nom = nom;
+        this.niveauDattaque = Math.min(niveauDattaque, 100);
+    }
+    public String getNom() {
+        return nom;
+    }
+
+    public int getNiveauAttaque() {
+        return niveauDattaque;
+    }
+@Override
+    public String toString() {
+        return nom + " (Attaque : " + niveauDattaque + ")";
+    }    
 }
