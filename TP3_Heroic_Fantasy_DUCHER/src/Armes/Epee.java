@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tp3_heroic_fantasy_ducher;
+package Armes;
+
+import tp3_heroic_fantasy_ducher.Arme;
 
 /**
  *
@@ -10,13 +12,11 @@ package tp3_heroic_fantasy_ducher;
  */
 public class Epee extends Arme {
     int finesse;
-    public Epee(String nom, int niveauDattaque) {
-        super(nom, niveauDattaque);
-    }
+    
 
     public Epee(int finesse, String nom, int niveauDattaque) {
         super(nom, niveauDattaque);
-        this.finesse = Math.min(finesse, 99);
+        this.finesse = Math.min(finesse, 100);
     }
  @Override
     public String toString() {
