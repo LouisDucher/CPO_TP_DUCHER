@@ -4,8 +4,6 @@
  */
 package Armes;
 
-import tp3_heroic_fantasy_ducher.Arme;
-
 /**
  *
  * @author louis
