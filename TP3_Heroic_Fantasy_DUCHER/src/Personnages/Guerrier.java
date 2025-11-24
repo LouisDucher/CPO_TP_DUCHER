@@ -10,10 +10,16 @@ package Personnages;
  */
 public class Guerrier extends Personnage{
     Boolean Cheval;
+    static int nbGuerrier;
 
     public Guerrier( String nom, int pv, Boolean Cheval) {
         super(nom, pv);
         this.Cheval = Cheval;
+        nbGuerrier++;
+    }
+
+    public static int getNbGuerrier() {
+        return nbGuerrier;
     }
 
     public void setCheval(Boolean Cheval) {

@@ -16,12 +16,17 @@ Arme armeActuelle = null;
 String nom;
 int pv;
 
+static int nbPersonnages = 0;
     public Personnage(String nom, int pv) {
         this.nom = nom;
         this.pv = pv;
+        nbPersonnages++;  
     }
 
-    
+    public static int getNbPersonnages() {
+        return nbPersonnages;
+    }
+
 ArrayList<Arme> tabA = new ArrayList<>(); 
 public void ajouterArme(Arme A) {
   
@@ -32,10 +37,11 @@ if (tabA.size()<capaciteMax){
 }else{
 System.out.println("Impossible : tableau plein !");
 }}
+
 public void equiperArme(Arme nomArme){
     for(Arme A: tabA){
-        if (A==nomArme){
-        armeActuelle=nomArme;   
+        if (A == nomArme){
+        armeActuelle = nomArme;   
         }
     }
 }
@@ -43,9 +49,10 @@ public void equiperArme(Arme nomArme){
     public Arme getArmeActuelle() {
         return armeActuelle;
     }
+
     @Override
     public String toString() {
-        return "Personnage{" + "nom=" + nom + ", pv=" + pv + "L arme en main="+ armeActuelle + '}';
+        return "Personnage{" + "nom=" + nom + ", pv=" + pv + ", arme en main=" + armeActuelle + '}';
     }
 }
 

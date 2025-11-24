@@ -61,6 +61,25 @@ public class TP3_Heroic_Fantasy_DUCHER {
             System.out.println(tailleDearmes);
         for (Personnage b : personnages) {
             System.out.println(b);
+            
+    Arme baton1 = new Baton(7,"Baton en bois", 2);
+    Arme baton2 = new Baton(19,"Baton magique", 6);
+    Arme baton3 = new Baton(34,"Baton runique", 10);
+
+    Arme epee1 = new Epee(8,"EpEe courte", 12);
+    Arme epee2 = new Epee(18,"Epee longue", 20);
+    Arme epee3 = new Epee(78,"Epee legendaire", 45);        
+    Conan.ajouterArme(baton1);
+    Conan.ajouterArme(epee1);
+    Conan.ajouterArme(epee3);
+    Conan.equiperArme(epee3);
+        System.out.println(Conan);
+    Gandalf.ajouterArme(baton2);
+    Gandalf.ajouterArme(baton3);
+    Gandalf.ajouterArme(epee2);
+    Gandalf.equiperArme(baton3);
+        System.out.println(Gandalf);
+            
     }
     }
 
