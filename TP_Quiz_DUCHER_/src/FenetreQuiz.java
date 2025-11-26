@@ -11,16 +11,34 @@ import java.util.ArrayList;
  * @author louis
  */
 public class FenetreQuiz extends javax.swing.JFrame {
-    
-    
+    private int score=0;
+    private int indexQuestionCourante = 0;
+    private ArrayList<Question> tab = new ArrayList<>(); 
     private void mettreQuestion(){
-        ArrayList<Question> tab = new ArrayList<>(); 
+        indexQuestionCourante++;
+        
         tab.add(new Question("combien font 2*3?","2","4","5","6",4 ));
          tab.add(new Question("combien font 2+3?","2","4","5","6",3 ));
           tab.add(new Question("combien font 2*2?","2","4","5","6",2 ));
            tab.add(new Question("combien font 2*1?","2","4","5","6",1 ));
             tab.add(new Question("combien font 2+2?","2","4","5","6",2 ));
-    }        
+    }  
+    private void afficherQuestionCourante(){
+        
+     int indexCourant =   indexQuestionCourante;
+     Question q = tab.get(indexQuestionCourante);
+
+    jLabel1.setText(q.getIntitule());
+    jButton1.setText(q.getProposition1());
+    jButton2.setText(q.getProposition2());
+    jButton3.setText(q.getProposition3());
+    jButton4.setText(q.getProposition4());
+
+    jButton1.setEnabled(true);
+    jButton2.setEnabled(true);
+    jButton3.setEnabled(true);
+    jButton4.setEnabled(true);
+    }
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreQuiz.class.getName());
 
     /**
@@ -28,6 +46,8 @@ public class FenetreQuiz extends javax.swing.JFrame {
      */
     public FenetreQuiz() {
         initComponents();
+        mettreQuestion();
+        afficherQuestionCourante();
     }
 
     /**
@@ -67,14 +87,29 @@ public class FenetreQuiz extends javax.swing.JFrame {
         });
 
         jButton3.setText("btnRep3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("btnRep4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         VouF.setText("lblReponse");
 
         Score.setText("lblScore");
 
         jButton5.setText("Suivant");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,18 +118,19 @@ public class FenetreQuiz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3)))
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(VouF, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)))
+                        .addComponent(VouF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton5)
                     .addComponent(Score, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -112,8 +148,8 @@ public class FenetreQuiz extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(Score, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VouF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(VouF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -128,12 +164,69 @@ public class FenetreQuiz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        int Choix=1;
+        int indexCourante =indexQuestionCourante;
+        Question q = tab.get(indexCourante);
+        int Reponse = q.getIndexBonneReponse();
+        if (Choix== Reponse){
+            VouF.setText("Bonne reponse");
+            score+=1;
+            Score.setText(score+"");
+        }else{
+            VouF.setText("T'es mauvais Jack");
+        }jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        int Choix=2;
+        int indexCourante =indexQuestionCourante;
+        Question q = tab.get(indexCourante);
+        int Reponse = q.getIndexBonneReponse();
+        if (Choix== Reponse){
+            VouF.setText("Bonne reponse");
+           score+=1;
+           Score.setText(score+"");
+        }else{
+            VouF.setText("T'es mauvais Jack");}
+        jButton2.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int Choix=3;
+        int indexCourante =indexQuestionCourante;
+        Question q = tab.get(indexCourante);
+        int Reponse = q.getIndexBonneReponse();
+        if (Choix== Reponse){
+            VouF.setText("Bonne reponse");
+            score+=1;
+            Score.setText(score+"");
+        }else{
+            VouF.setText("T'es mauvais Jack");}jButton3.setEnabled(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int Choix=1;
+        int indexCourante =indexQuestionCourante;
+        Question q = tab.get(indexCourante);
+        int Reponse = q.getIndexBonneReponse();
+        if (Choix== Reponse){
+            VouF.setText("Bonne reponse");
+            score+=1;
+            Score.setText(score+"");
+        }else{
+            VouF.setText("T'es mauvais Jack");}jButton4.setEnabled(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+int nombreDeQuestions=tab.size();
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int indexCourante =indexQuestionCourante;
+        int Taille=tab.size();
+        if (indexCourante<Taille){
+            afficherQuestionCourante();        
+        }else{
+        VouF.setText("Quiz terminé.Score : " + score + " / " + nombreDeQuestions);    
+        }
+        jButton5.setEnabled(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
