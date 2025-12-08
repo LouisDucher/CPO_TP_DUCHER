@@ -9,7 +9,13 @@ package miniprojet_cadenas_ducher;
  * @author louis
  */
 public class jeucadenas extends javax.swing.JFrame {
-    
+    int valeur = 0;
+    int valeur2=0;
+    int valeur3=0;
+    int valeur4=0;
+    int exact=0;
+    int tropHaut=0;
+    int tropBas=0;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jeucadenas.class.getName());
 
     /**
@@ -56,6 +62,11 @@ public class jeucadenas extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         up_chif1.setText("/\\");
+            up_chif1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    up_chif1ActionPerformed(evt);
+                }
+            });
             getContentPane().add(up_chif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 101, -1, -1));
 
             up_chif2.setText("/\\");
@@ -67,12 +78,27 @@ public class jeucadenas extends javax.swing.JFrame {
                 getContentPane().add(up_chif2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 101, -1, -1));
 
                 up_chif3.setText("/\\");
+                    up_chif3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            up_chif3ActionPerformed(evt);
+                        }
+                    });
                     getContentPane().add(up_chif3, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 101, -1, -1));
 
                     up_chif4.setText("/\\");
+                        up_chif4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                up_chif4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(up_chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 101, -1, -1));
 
                         down_chif1.setText("\\/");
+                        down_chif1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chif1ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 230, -1, -1));
 
                         down_chif2.setText("\\/");
@@ -92,19 +118,28 @@ public class jeucadenas extends javax.swing.JFrame {
                         getContentPane().add(down_chif3, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 230, -1, -1));
 
                         down_chif4.setText("\\/");
+                        down_chif4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chif4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 230, -1, -1));
 
-                        chif1.setText("jLabel1");
+                        chif1.setText("   jLabel1");
+                        chif1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
                         getContentPane().add(chif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 142, 66, 64));
 
-                        chif2.setText("jLabel2");
-                        getContentPane().add(chif2, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 142, 71, 64));
+                        chif2.setText("    jLabel2");
+                        chif2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+                        getContentPane().add(chif2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 71, 64));
 
-                        chif3.setText("jLabel3");
-                        getContentPane().add(chif3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 142, 58, 64));
+                        chif3.setText("   jLabel3");
+                        chif3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+                        getContentPane().add(chif3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 70, 64));
 
-                        chif4.setText("jLabel4");
-                        getContentPane().add(chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 142, 67, 64));
+                        chif4.setText("   jLabel4");
+                        chif4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+                        getContentPane().add(chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 67, 64));
 
                         button_test.setText("Tester");
                         button_test.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +149,7 @@ public class jeucadenas extends javax.swing.JFrame {
                         });
                         getContentPane().add(button_test, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 179, -1, -1));
 
-                        text_trouvelecode.setText("Trouve le bon code en moins de5 tentatives!");
+                        text_trouvelecode.setText("Trouve le bon code en moins de 5 tentatives!");
                         getContentPane().add(text_trouvelecode, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 22, 265, -1));
 
                         text_tentatives.setText("Tentatives");
@@ -136,32 +171,114 @@ public class jeucadenas extends javax.swing.JFrame {
                         getContentPane().add(text_chiffrehaut, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 350, 175, -1));
 
                         text_nbcorrect.setText("jLabel1");
-                        getContentPane().add(text_nbcorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 321, 37, -1));
+                        getContentPane().add(text_nbcorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 321, 120, -1));
 
                         text_nbhaut.setText("jLabel2");
-                        getContentPane().add(text_nbhaut, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 350, 37, -1));
+                        getContentPane().add(text_nbhaut, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 350, 110, -1));
 
                         text_nbbas.setText("jLabel3");
-                        getContentPane().add(text_nbbas, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 381, 37, -1));
+                        getContentPane().add(text_nbbas, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 381, 100, -1));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
 
     private void up_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chif2ActionPerformed
-        // TODO add your handling code here:
+     valeur2 = valeur2 + 1;
+
+    if(valeur2 > 9){
+        valeur2 = 0;    }
+chif2.setText(String.valueOf(valeur2)); 
+                                 
     }//GEN-LAST:event_up_chif2ActionPerformed
 
     private void down_chif3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif3ActionPerformed
-        // TODO add your handling code here:
+        valeur3--;
+
+    if(valeur3 < 0){
+        valeur3 = 9;
+    }
+    chif3.setText(String.valueOf(valeur3));
     }//GEN-LAST:event_down_chif3ActionPerformed
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
-        // TODO add your handling code here:
+
+    
+int[] essai = {valeur, valeur2, valeur3, valeur4};
+int[] solution = {3, 7, 1, 9};
+
+    
+
+    for (int i = 0; i < 4; i++) {
+        if (essai[i] == solution[i]) {
+            exact++;
+        } else if (essai[i] > solution[i]) {
+            tropHaut++;
+        } else {
+            tropBas++;
+        }
+    }  text_nbcorrect.setText("Exact : " + exact);
+    text_nbhaut.setText("Trop hauts : " + tropHaut);
+    text_nbbas.setText("Trop bas : " + tropBas);       
     }//GEN-LAST:event_button_testActionPerformed
 
     private void down_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif2ActionPerformed
-        // TODO add your handling code here:
+        valeur2--;
+
+    if(valeur2 < 0){
+        valeur2 = 9;   }
+chif2.setText(String.valueOf(valeur2));
+  
     }//GEN-LAST:event_down_chif2ActionPerformed
+
+    private void up_chif1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chif1ActionPerformed
+    valeur = valeur + 1;
+
+    if(valeur > 9){
+        valeur = 0;
+    }
+
+    chif1.setText(String.valueOf(valeur)); 
+    }//GEN-LAST:event_up_chif1ActionPerformed
+
+    private void down_chif1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif1ActionPerformed
+   valeur--;
+
+    if(valeur < 0){
+        valeur = 9;
+    }
+
+    chif1.setText(String.valueOf(valeur));
+    }//GEN-LAST:event_down_chif1ActionPerformed
+
+    private void up_chif3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chif3ActionPerformed
+        valeur3 = valeur3 + 1;
+
+    if(valeur3 > 9){
+        valeur3 = 0;
+    }
+
+    chif3.setText(String.valueOf(valeur3));
+    }//GEN-LAST:event_up_chif3ActionPerformed
+
+    private void down_chif4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif4ActionPerformed
+valeur4--;
+
+    if(valeur4 < 0){
+        valeur4 = 9;
+    }
+
+    chif4.setText(String.valueOf(valeur4));        // TODO add your handling code here:
+    }//GEN-LAST:event_down_chif4ActionPerformed
+
+    private void up_chif4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chif4ActionPerformed
+       valeur4 = valeur4 + 1;
+
+    if(valeur4 > 9){
+        valeur4 = 0;
+    }
+
+    chif4.setText(String.valueOf(valeur4));
+    }//GEN-LAST:event_up_chif4ActionPerformed
 
     /**
      * @param args the command line arguments
