@@ -16,6 +16,7 @@ public class jeucadenas extends javax.swing.JFrame {
     int exact=0;
     int tropHaut=0;
     int tropBas=0;
+    int z=0;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jeucadenas.class.getName());
 
     /**
@@ -155,7 +156,7 @@ public class jeucadenas extends javax.swing.JFrame {
                                 button_testActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(button_test, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 179, -1, -1));
+                        getContentPane().add(button_test, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
                         text_trouvelecode.setText("Trouve le bon code en moins de 5 tentatives!");
                         getContentPane().add(text_trouvelecode, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 22, 265, -1));
@@ -166,8 +167,8 @@ public class jeucadenas extends javax.swing.JFrame {
                         text_retry.setText("Retry");
                         getContentPane().add(text_retry, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 378, -1, -1));
 
-                        text_score.setText("jLabel3");
-                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 271, 55, 44));
+                        text_score.setText("0");
+                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 55, 44));
 
                         text_chiffrecorrect.setText("nombre de chiffres corrects :");
                         getContentPane().add(text_chiffrecorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 321, 168, -1));
@@ -178,13 +179,13 @@ public class jeucadenas extends javax.swing.JFrame {
                         text_chiffrehaut.setText("nombre de chiffres trop hauts :");
                         getContentPane().add(text_chiffrehaut, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 350, 175, -1));
 
-                        text_nbcorrect.setText("jLabel1");
+                        text_nbcorrect.setText("0");
                         getContentPane().add(text_nbcorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 321, 120, -1));
 
-                        text_nbhaut.setText("jLabel2");
+                        text_nbhaut.setText("0");
                         getContentPane().add(text_nbhaut, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 350, 110, -1));
 
-                        text_nbbas.setText("jLabel3");
+                        text_nbbas.setText("0");
                         getContentPane().add(text_nbbas, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 381, 100, -1));
 
                         pack();
@@ -226,7 +227,10 @@ int[] solution = {3, 7, 1, 9};
         }
     }  text_nbcorrect.setText("Exact : " + exact);
     text_nbhaut.setText("Trop hauts : " + tropHaut);
-    text_nbbas.setText("Trop bas : " + tropBas);       
+    text_nbbas.setText("Trop bas : " + tropBas); 
+    
+    z++;
+    text_score.setText(""+z);
     }//GEN-LAST:event_button_testActionPerformed
 
     private void down_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif2ActionPerformed
