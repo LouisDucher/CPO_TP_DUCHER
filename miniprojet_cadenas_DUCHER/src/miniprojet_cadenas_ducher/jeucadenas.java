@@ -125,18 +125,26 @@ public class jeucadenas extends javax.swing.JFrame {
                         });
                         getContentPane().add(down_chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 230, -1, -1));
 
+                        chif1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+                        chif1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         chif1.setText("   jLabel1");
                         chif1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
                         getContentPane().add(chif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 142, 66, 64));
 
+                        chif2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+                        chif2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         chif2.setText("    jLabel2");
                         chif2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
                         getContentPane().add(chif2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 71, 64));
 
+                        chif3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+                        chif3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         chif3.setText("   jLabel3");
                         chif3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
                         getContentPane().add(chif3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 70, 64));
 
+                        chif4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+                        chif4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         chif4.setText("   jLabel4");
                         chif4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
                         getContentPane().add(chif4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 67, 64));
