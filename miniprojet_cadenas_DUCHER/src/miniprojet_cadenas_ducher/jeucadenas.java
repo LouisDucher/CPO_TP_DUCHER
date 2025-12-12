@@ -10,6 +10,7 @@ package miniprojet_cadenas_ducher;
  */
 public class jeucadenas extends javax.swing.JFrame {
     classjeu boncode = new classjeu();
+    
     int valeur = 0;
     int valeur2=0;
     int valeur3=0;
