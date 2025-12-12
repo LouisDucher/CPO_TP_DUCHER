@@ -9,6 +9,7 @@ package miniprojet_cadenas_ducher;
  * @author louis
  */
 public class jeucadenas extends javax.swing.JFrame {
+    classjeu boncode = new classjeu();
     int valeur = 0;
     int valeur2=0;
     int valeur3=0;
@@ -18,6 +19,10 @@ public class jeucadenas extends javax.swing.JFrame {
     int tropBas=0;
     int z=0;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jeucadenas.class.getName());
+    private int c1;
+    private int c2;
+    private int c3;
+    private int c4;
 
     /**
      * Creates new form jeucadenas
@@ -165,6 +170,11 @@ public class jeucadenas extends javax.swing.JFrame {
                         getContentPane().add(text_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 233, 55, -1));
 
                         text_retry.setText("Retry");
+                        text_retry.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                text_retryActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(text_retry, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 378, -1, -1));
 
                         text_score.setText("0");
@@ -211,9 +221,13 @@ chif2.setText(String.valueOf(valeur2));
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
 
-    
+  
 int[] essai = {valeur, valeur2, valeur3, valeur4};
-int[] solution = {3, 7, 1, 9};
+
+int[] solution = boncode.solution;
+    exact = 0;
+    tropHaut = 0;
+    tropBas = 0;
 
     
 
@@ -291,6 +305,26 @@ valeur4--;
 
     chif4.setText(String.valueOf(valeur4));
     }//GEN-LAST:event_up_chif4ActionPerformed
+
+    private void text_retryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_retryActionPerformed
+ 
+
+    exact = 0;
+    tropHaut = 0;
+    tropBas = 0;
+    z = 0;
+
+    chif1.setText("0");
+    chif2.setText("0");
+    chif3.setText("0");
+    chif4.setText("0");
+   
+    text_nbcorrect.setText("Exact : 0");
+    text_nbhaut.setText("Trop hauts : 0");
+    text_nbbas.setText("Trop bas : 0");
+
+    text_score.setText("0");
+    }//GEN-LAST:event_text_retryActionPerformed
 
     /**
      * @param args the command line arguments
