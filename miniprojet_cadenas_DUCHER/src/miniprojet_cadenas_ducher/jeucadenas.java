@@ -246,6 +246,14 @@ int[] solution = boncode.solution;
     
     z++;
     text_score.setText(""+z);
+    if (z >= 5) {
+    javax.swing.JOptionPane.showMessageDialog(
+        this,
+        "Nombre maximum de tentatives atteint !",
+        "Fin de partie",
+        javax.swing.JOptionPane.WARNING_MESSAGE
+    );
+    return;}
     }//GEN-LAST:event_button_testActionPerformed
 
     private void down_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif2ActionPerformed
