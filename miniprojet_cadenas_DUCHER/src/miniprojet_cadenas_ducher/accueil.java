@@ -17,9 +17,8 @@ public class accueil extends javax.swing.JFrame {
      */
     public accueil() {
         initComponents();
-        new jeucadenas(5); 
-        new jeucadenas(8);
     }
+int difficulte;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -113,9 +112,9 @@ public class accueil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonjouerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonjouerActionPerformed
-          jeucadenas jeu = new jeucadenas(5);
-    jeu.setVisible(true);   
-    this.dispose();
+        jeucadenas jeu = new jeucadenas(5);
+        jeu.setVisible(true);   
+        this.dispose();
     }//GEN-LAST:event_boutonjouerActionPerformed
 
     private void boutonquitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonquitterActionPerformed
@@ -123,15 +122,11 @@ public class accueil extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonquitterActionPerformed
 
     private void modefacileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modefacileActionPerformed
-        jeucadenas jeu = new jeucadenas(8); 
-        jeu.setVisible(true);
-        this.dispose();
+          difficulte = 8;
     }//GEN-LAST:event_modefacileActionPerformed
 
     private void modedurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modedurActionPerformed
-        jeucadenas jeu = new jeucadenas(5); 
-        jeu.setVisible(true);
-        this.dispose();
+          difficulte = 5;
     }//GEN-LAST:event_modedurActionPerformed
 
     /**

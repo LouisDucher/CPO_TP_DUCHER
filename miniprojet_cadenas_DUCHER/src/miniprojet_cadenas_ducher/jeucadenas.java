@@ -24,7 +24,7 @@ public class jeucadenas extends javax.swing.JFrame {
     private int c2;
     private int c3;
     private int c4;
-
+    int MAX_TRY=2 ; 
     /**
      * Creates new form jeucadenas
      */
@@ -223,15 +223,15 @@ chif2.setText(String.valueOf(valeur2));
 
     private void button_testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_testActionPerformed
 
-  
-int[] essai = {valeur, valeur2, valeur3, valeur4};
 
-int[] solution = boncode.solution;
+
+    
+    int[] essai = {valeur, valeur2, valeur3, valeur4};
+    int[] solution = boncode.solution;
+
     exact = 0;
     tropHaut = 0;
     tropBas = 0;
-
-    
 
     for (int i = 0; i < 4; i++) {
         if (essai[i] == solution[i]) {
@@ -241,31 +241,35 @@ int[] solution = boncode.solution;
         } else {
             tropBas++;
         }
-    }  text_nbcorrect.setText("Exact : " + exact);
+    }
+
+    text_nbcorrect.setText("Exact : " + exact);
     text_nbhaut.setText("Trop hauts : " + tropHaut);
-    text_nbbas.setText("Trop bas : " + tropBas); 
-    
+    text_nbbas.setText("Trop bas : " + tropBas);
+
     z++;
-    text_score.setText(""+z);
-    if (z >= 5) {
-    javax.swing.JOptionPane.showMessageDialog(
-        this,
-        "Vous avez échoué",
-        "Fin de partie",
-        javax.swing.JOptionPane.WARNING_MESSAGE
-    );
-    return;}
+    text_score.setText(z + "/" + MAX_TRY);
     if (exact == 4) {
-    javax.swing.JOptionPane.showMessageDialog(
-        this,
-        "Bravo ! Tu as trouvé le bon code !",
-        "Réussite",
-        javax.swing.JOptionPane.INFORMATION_MESSAGE
-    );
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Bravo ! Tu as trouvé le bon code !",
+            "Réussite",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+        button_test.setEnabled(false);
+        return;
+    }
 
-
-    button_test.setEnabled(false);
-}
+   
+    if (z == MAX_TRY) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Vous avez échoué",
+            "Fin de partie",
+            javax.swing.JOptionPane.WARNING_MESSAGE
+        );
+        button_test.setEnabled(false);
+    }
     }//GEN-LAST:event_button_testActionPerformed
 
     private void down_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif2ActionPerformed
@@ -328,12 +332,14 @@ valeur4--;
     }//GEN-LAST:event_up_chif4ActionPerformed
 
     private void text_retryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_retryActionPerformed
- 
+
+    text_score.setText("0/" + MAX_TRY);
+    button_test.setEnabled(true); 
 
     exact = 0;
     tropHaut = 0;
     tropBas = 0;
-    z = 0;
+    z=0;
 
     chif1.setText("0");
     chif2.setText("0");
