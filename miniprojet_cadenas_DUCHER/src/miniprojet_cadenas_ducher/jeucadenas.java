@@ -28,8 +28,9 @@ public class jeucadenas extends javax.swing.JFrame {
     /**
      * Creates new form jeucadenas
      */
-    public jeucadenas() {
+    public jeucadenas(int par) {
         initComponents();
+        
     }
 
     /**
@@ -249,11 +250,22 @@ int[] solution = boncode.solution;
     if (z >= 5) {
     javax.swing.JOptionPane.showMessageDialog(
         this,
-        "Nombre maximum de tentatives atteint !",
+        "Vous avez échoué",
         "Fin de partie",
         javax.swing.JOptionPane.WARNING_MESSAGE
     );
     return;}
+    if (exact == 4) {
+    javax.swing.JOptionPane.showMessageDialog(
+        this,
+        "Bravo ! Tu as trouvé le bon code !",
+        "Réussite",
+        javax.swing.JOptionPane.INFORMATION_MESSAGE
+    );
+
+
+    button_test.setEnabled(false);
+}
     }//GEN-LAST:event_button_testActionPerformed
 
     private void down_chif2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chif2ActionPerformed

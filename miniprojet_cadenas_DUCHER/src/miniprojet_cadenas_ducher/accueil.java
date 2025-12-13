@@ -17,6 +17,8 @@ public class accueil extends javax.swing.JFrame {
      */
     public accueil() {
         initComponents();
+        new jeucadenas(5); 
+        new jeucadenas(8);
     }
 
     /**
@@ -31,8 +33,8 @@ public class accueil extends javax.swing.JFrame {
         messbienvenue = new javax.swing.JLabel();
         boutonjouer = new javax.swing.JButton();
         boutonquitter = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        modefacile = new javax.swing.JButton();
+        modedur = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,9 +57,19 @@ public class accueil extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        modefacile.setText("facile");
+        modefacile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modefacileActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        modedur.setText("dur");
+        modedur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modedurActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,9 +88,9 @@ public class accueil extends javax.swing.JFrame {
                         .addGap(22, 22, 22))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(99, 99, 99)
-                .addComponent(jButton1)
+                .addComponent(modefacile)
                 .addGap(40, 40, 40)
-                .addComponent(jButton2)
+                .addComponent(modedur)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,8 +100,8 @@ public class accueil extends javax.swing.JFrame {
                 .addComponent(messbienvenue, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(modefacile)
+                    .addComponent(modedur))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonjouer)
@@ -101,7 +113,7 @@ public class accueil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonjouerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonjouerActionPerformed
-          jeucadenas jeu = new jeucadenas();
+          jeucadenas jeu = new jeucadenas(5);
     jeu.setVisible(true);   
     this.dispose();
     }//GEN-LAST:event_boutonjouerActionPerformed
@@ -109,6 +121,18 @@ public class accueil extends javax.swing.JFrame {
     private void boutonquitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonquitterActionPerformed
         System.exit(0);
     }//GEN-LAST:event_boutonquitterActionPerformed
+
+    private void modefacileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modefacileActionPerformed
+        jeucadenas jeu = new jeucadenas(8); 
+        jeu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_modefacileActionPerformed
+
+    private void modedurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modedurActionPerformed
+        jeucadenas jeu = new jeucadenas(5); 
+        jeu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_modedurActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,8 +162,8 @@ public class accueil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boutonjouer;
     private javax.swing.JButton boutonquitter;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel messbienvenue;
+    private javax.swing.JButton modedur;
+    private javax.swing.JButton modefacile;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ package miniprojet_cadenas_ducher;
  */
 public class classjeu {
 
-  int z = 0;                 // nombre de tentatives
+  int z = 0;               
 final int MAX_TRY = 5;  
     int exact = 0;
     int tropHaut = 0;
