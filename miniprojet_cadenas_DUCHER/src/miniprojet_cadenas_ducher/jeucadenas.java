@@ -354,6 +354,11 @@ valeur4--;
     text_nbbas.setText("Trop bas : 0");
 
     text_score.setText("0");
+    
+    accueil menu = new accueil();
+    menu.setVisible(true);
+
+    this.dispose();
     }//GEN-LAST:event_text_retryActionPerformed
 
     /**
