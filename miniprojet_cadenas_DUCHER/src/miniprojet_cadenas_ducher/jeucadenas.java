@@ -24,14 +24,17 @@ public class jeucadenas extends javax.swing.JFrame {
     private int c2;
     private int c3;
     private int c4;
-    int MAX_TRY=2 ; 
+    int MAX_TRY ; 
     /**
      * Creates new form jeucadenas
      */
-    public jeucadenas(int par) {
-        initComponents();
-        
-    }
+    public jeucadenas(int maxTry) {
+    initComponents();
+    this.MAX_TRY = maxTry;  
+    boncode.genererCombinaison();
+    z = 0;
+    text_score.setText("0/" + MAX_TRY);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

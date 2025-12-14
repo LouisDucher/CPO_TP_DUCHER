@@ -112,7 +112,7 @@ int difficulte;
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonjouerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonjouerActionPerformed
-        jeucadenas jeu = new jeucadenas(5);
+        jeucadenas jeu = new jeucadenas(difficulte);
         jeu.setVisible(true);   
         this.dispose();
     }//GEN-LAST:event_boutonjouerActionPerformed
@@ -123,10 +123,12 @@ int difficulte;
 
     private void modefacileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modefacileActionPerformed
           difficulte = 8;
+           boutonjouer.setEnabled(true);
     }//GEN-LAST:event_modefacileActionPerformed
 
     private void modedurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modedurActionPerformed
           difficulte = 5;
+           boutonjouer.setEnabled(true);
     }//GEN-LAST:event_modedurActionPerformed
 
     /**
