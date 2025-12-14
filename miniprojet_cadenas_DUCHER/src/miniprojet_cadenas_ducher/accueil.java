@@ -17,6 +17,7 @@ public class accueil extends javax.swing.JFrame {
      */
     public accueil() {
         initComponents();
+        boutonjouer.setEnabled(false);
     }
 int difficulte;
 
